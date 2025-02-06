@@ -33,6 +33,7 @@ function updateClock() {
     $('month').innerHTML = month;
     $('year').innerHTML = year;
 
+    $(`${day - 1 }`).classList.remove('active');
     $(`${day}`).classList.add('active');
 
     // $('hour').style.transform = `rotate(${hours * 30}deg)`;
