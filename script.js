@@ -6,7 +6,7 @@ const zeroPad = (num) => num.toString().padStart(2, '0');
 
 function updateClock() {
     const now = new Date();
-    const hours = zeroPad(now.getHours());
+    let hours = zeroPad(now.getHours());
     const minutes = zeroPad(now.getMinutes());
     const seconds = zeroPad(now.getSeconds()); 
     const day = days[now.getDay()];

@@ -52,6 +52,17 @@ body{
     font-size: 1.5rem;
 }
 
+#colom{
+    position: relative;
+    bottom: 6px;
+}
+
+#sec{
+    /* background-color: aqua; */
+    display: inline-block;
+    width: 85px;
+}
+
 @media screen and (max-width: 500px){
     .clock{
         height: 200px;
@@ -68,6 +79,11 @@ body{
 
     .date{
         font-size: 1rem;
+    }
+
+    #sec{
+        display: inline;
+        width: auto;
     }
     
 }
