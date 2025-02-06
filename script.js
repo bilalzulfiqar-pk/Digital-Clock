@@ -10,6 +10,7 @@ function updateClock() {
     const minutes = zeroPad(now.getMinutes());
     const seconds = zeroPad(now.getSeconds()); 
     const day = days[now.getDay()];
+    const prevDay = days[now.getDay() - 1];
     const month = months[now.getMonth()];
     const date = zeroPad(now.getDate());
     const year = now.getFullYear();
@@ -33,7 +34,7 @@ function updateClock() {
     $('month').innerHTML = month;
     $('year').innerHTML = year;
 
-    $(`${day - 1 }`).classList.remove('active');
+    $(`${prevDay}`).classList.remove('active');
     $(`${day}`).classList.add('active');
 
     // $('hour').style.transform = `rotate(${hours * 30}deg)`;
