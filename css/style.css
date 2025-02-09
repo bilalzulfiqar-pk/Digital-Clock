@@ -83,8 +83,8 @@ body{
     }
 
     #sec{
-        display: inline;
-        width: auto;
+        display: inline-block;
+        width: 41px;
     }
     
 }
