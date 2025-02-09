@@ -10,7 +10,7 @@ function updateClock() {
     const minutes = zeroPad(now.getMinutes());
     const seconds = zeroPad(now.getSeconds()); 
     const day = days[now.getDay()];
-    const prevDay = days[now.getDay() - 1];
+    const prevDay = !(now.getDay() - 1 < 0) ? days[now.getDay() - 1] : days[6];
     const month = months[now.getMonth()];
     const date = zeroPad(now.getDate());
     const year = now.getFullYear();
@@ -18,7 +18,7 @@ function updateClock() {
 
     // console.log(`${hours}:${minutes}:${seconds} ${day} ${month} ${date} ${year}`);
 
-    // console.log(now);
+    // console.log(days[now.getDay()]);
 
     if (hours >= 12) {
         $('ampm').innerHTML = 'PM';
@@ -34,8 +34,8 @@ function updateClock() {
     $('month').innerHTML = month;
     $('year').innerHTML = year;
 
-    $(`${prevDay}`).classList.remove('active');
     $(`${day}`).classList.add('active');
+    $(`${prevDay}`).classList.remove('active');
 
     // $('hour').style.transform = `rotate(${hours * 30}deg)`;
 }
