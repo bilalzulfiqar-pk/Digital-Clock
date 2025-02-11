@@ -22,7 +22,9 @@ function updateClock() {
 
     if (hours >= 12) {
         $('ampm').innerHTML = 'PM';
-        hours = zeroPad(hours - 12);
+        if(hours> 12){
+            hours = zeroPad(hours - 12);
+        }
     } else {
         $('ampm').innerHTML = 'AM';
     }
